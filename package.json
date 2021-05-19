@@ -1,0 +1,48 @@
+{
+  "name": "gatsby-remark-extract-image-attributes",
+  "version": "1.0.0",
+  "description": "Gatsby Transformer Remark plugin that extracts data attributes from images in Markdown (.md) files and adds them to the AST stream for later processing.",
+  "main": "index.js",
+  "jest": {
+    "collectCoverage": true
+  },
+  "scripts": {
+    "build": "babel src --out-dir ./ --source-maps",
+    "watch": "babel src --out-dir ./ --source-maps --watch",
+    "lint": "eslint --ext js ./ --cache",
+    "test": "jest --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newsproutsmedia/gatsby-remark-extract-image-attributes.git"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-transformer-remark",
+    "gatsby-image-attributes"
+  ],
+  "author": "NB Walters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newsproutsmedia/gatsby-remark-extract-image-attributes/issues"
+  },
+  "homepage": "https://github.com/newsproutsmedia/gatsby-remark-extract-image-attributes#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "jsdom": "^16.5.3",
+    "querystring": "^0.2.1",
+    "unist-util-visit": "^2.0.3"
+  },
+  "peerDependencies": {
+    "gatsby": ">2.0.0",
+    "gatsby-transformer-remark": ">2.0.0"
+  }
+}
