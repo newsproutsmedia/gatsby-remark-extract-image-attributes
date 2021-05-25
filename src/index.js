@@ -6,8 +6,6 @@ const { DEFAULT_OPTIONS } = require('./constants');
 
 module.exports = ({ markdownAST }, pluginOptions) => {
 
-  // TODO: Add boolean option to strip attributes
-
   /**
    * Check if pluginOptions contains "properties" and return array
    * @param {Object} pluginOptions 
