@@ -1,5 +1,7 @@
 # gatsby-remark-extract-image-attributes
 
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen) ![Circle CI](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)
+
 Extract data attributes from the images in your Markdown (.md) files and add them to the remark AST for later processing.
 
 ### Align And Size Markdown Images
@@ -95,4 +97,11 @@ If no data-* attribute is found, it will look for the attribute name alone:
 
 ```
 <img src="my-image.jpg" alt="Alt text here" title="Title text here" align="left" height="1280" width="720" data-caption="My awesome picture">
+```
+
+## Testing
+
+To run Jest tests: 
+```
+npm test
 ```
