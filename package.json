@@ -22,7 +22,7 @@
     "gatsby-transformer-remark",
     "gatsby-image-attributes"
   ],
-  "author": "NB Walters",
+  "author": "NB Walters (https://nbwalters.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/newsproutsmedia/gatsby-remark-extract-image-attributes/issues"
