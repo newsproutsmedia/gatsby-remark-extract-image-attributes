@@ -11,6 +11,14 @@ Using the two plugins together makes it simple to align and size images in your 
 
 ## Getting Started
 
+### Compatibility
+This plugin has been tested, and is compatible, with the following (related) dependencies: 
+
+- gatsby: ^3.3.1
+- gatsby-transformer-remark: ^3.0.0
+- gatsby-transformer-sharp: ^3.0.0
+- gatsby-remark-images: ^4.0.0
+
 ### Prerequisites
 This is plugin requires [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark). 
 
