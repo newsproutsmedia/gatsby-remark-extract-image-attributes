@@ -20,7 +20,8 @@ This plugin has been tested, and is compatible, with the following (related) dep
 - gatsby-remark-images: ^4.0.0
 
 ### Prerequisites
-This is plugin requires [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark). 
+- [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)
+- Node.js v10 or newer
 
 ### Installation
 ```
