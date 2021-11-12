@@ -1,4 +1,4 @@
-const querystring = require('querystring');
+const querystring = require('qs');
 const { DEFAULT_OPTIONS } = require('./constants');
 
 const pluginFunctions = {
