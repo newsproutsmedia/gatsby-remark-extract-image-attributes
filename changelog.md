@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2021-11-12
+- Swapped querystring dependency for qs
+- Added stripMdAttributes option
 ## [1.0.5] - 2021-06-03
 ### Changed
 - Added changelog.md

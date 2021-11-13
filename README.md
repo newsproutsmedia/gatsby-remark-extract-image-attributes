@@ -67,17 +67,37 @@ By default, the plugin extracts the "align", "width", and "height" attributes. A
 
 ```
 {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-extract-image-attributes`,
-            options: {
-              properties: ["caption", "filesize", "format"]
-            }
-          },
-        ]
-      }
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      {
+        resolve: `gatsby-remark-extract-image-attributes`,
+        options: {
+          properties: ["caption", "filesize", "format"]
+        }
+      },
+    ]
+  }
+}
+
+```
+
+### `stripMdAttributes` (boolean)
+When using Markdown syntax, setting this value to "true" will remove url params from the image source. For example, ```image.jpg?align=left&width=300``` will become ```image.jpg```.
+
+```
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      {
+        resolve: `gatsby-remark-extract-image-attributes`,
+        options: {
+          stripMdAttributes: true,
+        }
+      },
+    ]
+  }
 }
 
 ```
