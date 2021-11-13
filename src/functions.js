@@ -15,7 +15,7 @@ const pluginFunctions = {
    * set properties value
    */
   setProperties: function() {
-    this.properties = [...DEFAULT_OPTIONS.properties, ...this.getPluginOptionsProperties(this.pluginOptions)]
+    this.properties = [...DEFAULT_OPTIONS.properties, ...this.getPluginOptionsProperties(this.pluginOptions)];
   },
 
   /**
@@ -80,6 +80,27 @@ const pluginFunctions = {
     const imgUrl = node.url.toString();
     const queryParams = imgUrl.split('?')[1];
     return querystring.parse(queryParams);
+  },
+
+  /**
+   * Remove query params from node.url
+   * @param node
+   */
+  stripParamsFromUrl: function(node) {
+    const cleanUrl = this.getCleanUrl(node);
+    node.url = cleanUrl;
+    return (node);
+  },
+
+  /**
+   * Get return url without query params
+   * @param node
+   * @returns {Object}
+   */
+  getCleanUrl: function(node) {
+    const imgUrl = node.url.toString();
+    const cleanUrl = imgUrl.split('?')[0];
+    return cleanUrl;
   },
 
   /**
