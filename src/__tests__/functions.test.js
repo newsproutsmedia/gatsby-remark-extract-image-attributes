@@ -105,6 +105,24 @@ describe("Plugin Functions Tests", () => {
         )
     })
 
+    it("should remove query params from node.url", () => {
+        const nodeObj = {url: "image.jpg?align=left&width=300&height=250"};
+        const cleanUrl = pluginFunctions.stripParamsFromUrl(nodeObj);
+        expect(cleanUrl).toEqual(
+            expect.objectContaining(
+                {
+                    url: "image.jpg",
+                }
+            )
+        );
+    })
+
+    it("should return a url without params", () => {
+        const nodeObj = {url: "image.jpg?align=left&width=300&height=250"};
+        const cleanUrl = pluginFunctions.getCleanUrl(nodeObj);
+        expect(cleanUrl).toEqual("image.jpg");
+    })
+
     it("should set markdown image attributes", () => {
         const nodeObj = {};
         const queryParams = {
