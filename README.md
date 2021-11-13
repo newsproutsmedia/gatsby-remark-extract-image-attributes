@@ -9,6 +9,28 @@ This plugin can be used by itself, or in conjunction with the [gatsby-remark-ima
 
 Using the two plugins together makes it simple to align and size images in your Markdown files while still taking advantage of Gatsby's excellent image optimization plugin, [gatsby-remark-images](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-images).
 
+### Use With Gatsby Remark Copy Linked Files Plugin
+The "stripMdAttributes" option can be used to remove url params prior to being processed by the [gatsby-remark-copy-linked-files](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-copy-linked-files) plugin. This setup can be very useful when using a git-backed CMS such as [Forestry.io](https://forestry.io/) or [NetlifyCMS](https://www.netlifycms.org/) where images must be stored in and referenced from the "static" directory.
+
+To use this plugin with [gatsby-remark-copy-linked-files](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-copy-linked-files) (and Gatsby Remark Images), place it thusly in the gatsby-config.js plugins array:
+
+``` 
+{
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-extract-image-attributes`,
+            options: {
+              stripMdAttributes: true,
+            }
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-images`,
+        ]
+      }
+}
+```
 ## Getting Started
 
 ### Compatibility
@@ -67,17 +89,37 @@ By default, the plugin extracts the "align", "width", and "height" attributes. A
 
 ```
 {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-extract-image-attributes`,
-            options: {
-              properties: ["caption", "filesize", "format"]
-            }
-          },
-        ]
-      }
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      {
+        resolve: `gatsby-remark-extract-image-attributes`,
+        options: {
+          properties: ["caption", "filesize", "format"]
+        }
+      },
+    ]
+  }
+}
+
+```
+
+### `stripMdAttributes` (boolean)
+When using Markdown syntax, setting this value to "true" will remove url params from the image source. For example, ```image.jpg?align=left&width=300``` will become ```image.jpg```.
+
+```
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      {
+        resolve: `gatsby-remark-extract-image-attributes`,
+        options: {
+          stripMdAttributes: true,
+        }
+      },
+    ]
+  }
 }
 
 ```

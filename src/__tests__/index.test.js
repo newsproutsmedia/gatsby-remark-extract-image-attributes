@@ -148,5 +148,12 @@ describe("AST Visit Tests", () => {
         expect(newAST.children[0].children[0].height).toBe("250");
     })
 
+    it("should remove params from filename if stripMdAttribute = true", () => {
+      const pluginOptions = {stripMdAttributes: true};
+      const ast = {markdownAST: mdTestAST};
+      const newAST = plugin(ast, pluginOptions);
+      expect(newAST.children[0].children[0].url).toBe("test.jpg");
+  })
+
 })
 

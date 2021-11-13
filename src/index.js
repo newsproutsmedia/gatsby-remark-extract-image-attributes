@@ -2,6 +2,7 @@ const visit = require("unist-util-visit");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const PluginFunctions = require('./functions');
+const pluginFunctions = require("./functions");
 
 const gatsbyRemarkExtractImageAttributesPlugin = ({ markdownAST }, pluginOptions) => {
 
@@ -24,6 +25,7 @@ const gatsbyRemarkExtractImageAttributesPlugin = ({ markdownAST }, pluginOptions
   visit(markdownAST, "image", node => {
     const imgParams = PluginFunctions.getMarkdownImageParams(node);
     imgParams && PluginFunctions.setMarkdownImageAttributes(node, imgParams);
+    PluginFunctions.pluginOptions.stripMdAttributes && PluginFunctions.stripParamsFromUrl(node);
   })
 
   return markdownAST;
