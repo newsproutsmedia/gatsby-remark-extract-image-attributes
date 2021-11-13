@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-extract-image-attributes",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Gatsby Transformer Remark plugin that extracts data attributes from images in Markdown (.md) files and adds them to the AST stream for later processing.",
   "main": "src/index.js",
   "jest": {
